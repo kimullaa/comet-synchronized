@@ -21,6 +21,7 @@ public class CountUpServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		//インクリメントされるまで待つ
 		int prev = count.get();
 		while (count.get() <= prev) {
 		}
@@ -31,7 +32,7 @@ public class CountUpServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		// 1sごとにcountをインクリメントする
+		// 5sごとにcountをインクリメントする
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask() {
 			@Override
