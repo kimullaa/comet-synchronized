@@ -16,9 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "CountUpServlet", urlPatterns = { "/countUp" })
 public class CountUpServlet extends HttpServlet {
-	// countUp‚³‚ê‚é’l
+	// countUpã•ã‚Œã‚‹å€¤
 	AtomicInteger count = new AtomicInteger(0);
-	List<AsyncContext> queue = new ArrayList<>();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -32,7 +31,7 @@ public class CountUpServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		// 1s‚²‚Æ‚Écount‚ğƒCƒ“ƒNƒŠƒƒ“ƒg‚·‚é
+		// 1sã”ã¨ã«countã‚’ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆã™ã‚‹
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask() {
 			@Override
