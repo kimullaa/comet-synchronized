@@ -14,7 +14,7 @@
 
 	<script type="text/javascript">
 		$(function() {
-            (function getCountUp() {
+			(function getCountUp() {
 				$.ajax({
 					type : "GET",
 					url : "countUp",
@@ -22,10 +22,10 @@
 					dataType : "json",
 				}).done(function(data) {
 					$("dd").text(data.count);
-                    getCountUp();
+					getCountUp();
 				}).fail(function(jqXHR, textStatus) {
 					$("dd").text("error occured");
-                    getCountUp();
+					getCountUp();
 				});
 			})();
 		});
